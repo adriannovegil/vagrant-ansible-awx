@@ -2,13 +2,16 @@
 
 set -o errexit
 
-function installDocker {
+function installSoftwareBase {
   # Install software base
   sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
     software-properties-common
+}
+
+function installDocker {
   # Install key
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   # Add Docker repository
@@ -38,6 +41,7 @@ function installDockerCompose {
 
 echo "Setup Docker"
 
+installSoftwareBase
 installDocker
 installDockerCompose
 
