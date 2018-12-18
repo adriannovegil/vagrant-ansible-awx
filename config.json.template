@@ -4,7 +4,7 @@
             "enabled": true,
             "guest-hostname": "devcircus-awx-server.vm.server",
             "group": "DevCircus Infra Servers",
-            "box": "ubuntu/xenial64",
+            "box": "ubuntu/bionic64",
             "timezone": "Europe/Madrid",
             "cpus": 2,
             "memory": 4096,
@@ -14,17 +14,17 @@
               "interfaces": [
                 {
                   "network-type": "private",
-                  "if-adapter": "eth1",
+                  "if-adapter": "enp0s8",
                   "if-inet-type": "static",
                   "if-address": "10.0.13.10",
                   "if-netmask": "255.255.0.0"
                 },
                 {
                   "network-type": "public",
-                  "if-adapter": "eth2",
+                  "if-adapter": "enp0s3",
                   "if-inet-type": "static",
-                  "if-address": "192.168.0.10",
-                  "if-netmask": "255.255.0.0",
+                  "if-address": "192.168.88.10",
+                  "if-netmask": "255.255.88.0",
                   "bridge-adapter": "enp1s0"
                 }
               ]
